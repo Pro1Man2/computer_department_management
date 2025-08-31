@@ -5,7 +5,11 @@ import './App.css'
 
 // استيراد المكونات
 import LoginPage from './components/auth/LoginPage'
-import Dashboard from './components/dashboard/Dashboard'
+import DashboardPage from './pages/DashboardPage'
+import QualityReportsPage from './pages/QualityReportsPage'
+import InitiativesPage from './pages/InitiativesPage'
+import BehaviorManagementPage from './pages/BehaviorManagementPage'
+import SurveysPage from './pages/SurveysPage'
 import Layout from './components/layout/Layout'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 
@@ -45,7 +49,47 @@ function AppContent() {
             element={
               <ProtectedRoute>
                 <Layout>
-                  <Dashboard />
+                  <DashboardPage />
+                </Layout>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/quality-reports" 
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <QualityReportsPage />
+                </Layout>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/initiatives" 
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <InitiativesPage />
+                </Layout>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/behavior-management" 
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <BehaviorManagementPage />
+                </Layout>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/surveys" 
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <SurveysPage />
                 </Layout>
               </ProtectedRoute>
             } 
@@ -70,4 +114,5 @@ function App() {
 }
 
 export default App
+
 
